@@ -1,2 +1,2 @@
 # focabank
-A project build for microservices with springboot and ecosystem Spring
+A project build with springboot and ecosystem Spring
