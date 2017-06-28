@@ -3,7 +3,8 @@ package com.foca.model.jpa;
 public enum Status {
 	
 	CANCELLED(0, "CANCELLED"),
-	CONFIRMED(1, "CONFIRMED");
+	CONFIRMED(1, "CONFIRMED"),
+	NOTCONFIRMED(2, "NOTCONFIRMED");
 	
 	private final int id;
 	private final String name;

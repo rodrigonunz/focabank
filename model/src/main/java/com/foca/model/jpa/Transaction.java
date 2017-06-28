@@ -48,6 +48,12 @@ public class Transaction implements Serializable {
 	private Date date;
 	
 	@Column
+	@Temporal(TemporalType.DATE)
+	@JsonFormat(pattern="yyyy-MM-dd")
+	@NotNull
+	private Date processedDate;
+	
+	@Column
 	@NotNull
 	private BigDecimal fee;
 	
@@ -117,4 +123,14 @@ public class Transaction implements Serializable {
 	public void setStatus(Status status) {
 		this.status = status;
 	}
+
+	public Date getProcessedDate() {
+		return processedDate;
+	}
+
+	public void setProcessedDate(Date processedDate) {
+		this.processedDate = processedDate;
+	}
+	
+	
 }

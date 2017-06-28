@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layoutPadrao">
+<head>
+<title>New payment</title>
+</head>
+
+<section layout:fragment="conteudo">
+
+	<label></label>
+
+	<form class="form-horizontal" method="POST" th:action="@{/pay}"
+		th:object="${transaction}">
+		<!-- <div layout:include="mensagemGeral"></div>
+		<div layout:include="mensagemErro"></div> -->
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="clearfix">
+					<h3 class="panel-title aw-titulo-panel">New payment</h3>
+					<a class="btn-link aw-link-panel" th:href="@{/wallet}">Return
+						to wallet </a>
+				</div>
+			</div>
+
+			<div class="panel-body">
+
+				<div class="form-group"
+					th:classappend="${#fields.hasErrors('walletC')} ? 'has-error'">
+					<label for="walletC" class="col-sm-2 control-label">Wallet</label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control" id="walletC"
+							maxlength="60" th:field="*{walletC}" />
+					</div>
+				</div>
+				<div class="form-group"
+					th:classappend="${#fields.hasErrors('paymentId')} ? 'has-error'">
+					<label for="paymentId" class="col-sm-2 control-label">Identification</label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control" id="paymentId"
+							maxlength="256" th:field="*{paymentId}" />
+					</div>
+				</div>
+				<div class="form-group"
+					th:classappend="${#fields.hasErrors('value')} ? 'has-error'">
+					<label for="value" class="col-sm-2 control-label">Value</label>
+					<div class="col-sm-2">
+						<input type="text" class="form-control valor-currency" id="value"
+							th:field="*{value}" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-primary">Send</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</form>
+
+</section>
+
+</html>

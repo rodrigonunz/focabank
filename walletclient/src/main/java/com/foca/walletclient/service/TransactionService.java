@@ -12,7 +12,7 @@ public class TransactionService {
 	@Autowired
 	TransactionSender sender;
 
-	public void processarTransacao(Transaction t) {
+	public void processTransaction(Transaction t) {
 		//executa regras aqui
 		sender.send(t);
 	}

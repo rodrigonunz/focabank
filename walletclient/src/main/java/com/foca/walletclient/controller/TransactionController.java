@@ -29,7 +29,7 @@ public class TransactionController {
 		t.setWalletC("A");
 		t.setWalletD("B");
 		t.setDate(new Date());
-		service.processarTransacao(t);
+		service.processTransaction(t);
 		
 		return CADASTRO_VIEW;
 	}
